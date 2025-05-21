@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>className vs classList.add()</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="demo-text" class="bold">Hello, Tech Tribe! 👋</h2>
+
+  <button onclick="useClassName()">Use className (overwrite)</button>
+  <button onclick="useClassListAdd()">Use classList.add()</button>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    const text = document.getElementById('demo-text');
+
+    function useClassName() {
+      // Overwrites the existing "bold" class
+      text.className = 'highlight';
+    }
+
+    function useClassListAdd() {
+      // Adds 'highlight' without removing 'bold'
+      text.classList.add('highlight');
+    }
+
+    function reset() {
+      // Restore original class
+      text.className = 'bold';
+    }
+  </script>
+
+</body>
+</html>
