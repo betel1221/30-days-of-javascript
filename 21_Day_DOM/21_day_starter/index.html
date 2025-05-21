@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Class Example</title>
+    <style>
+        .title { color: blue; }
+        .header-title { font-size: 24px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <h1>First Title</h1>
+    <h1>Second Title</h1>
+    <h1>Third Title</h1>
+    <h1>Fourth Title</h1>
+
+    <script>
+        const titles = document.querySelectorAll('h1');
+
+        // Append multiple classes to the fourth title
+        titles[3].classList.add('title', 'header-title');
+
+        // Logging to check added classes
+        console.log(titles[3].classList); // Output: ["title", "header-title"]
+    </script>
+</body>
+</html>

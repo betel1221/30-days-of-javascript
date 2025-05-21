@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../30-Days-Of-React-master/30-Days-Of-React-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "vs"
+	}
+}
