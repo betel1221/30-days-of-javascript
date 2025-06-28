@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(14, 13, 13);
+}
+    .first{
+        color: rgb(195, 192, 224);
+    }
+    #first{
+        color: rgb(199, 199, 232);
+    }
+    .second{
+        color: rgb(180, 192, 220);
+    }
+    .coder{
+        color: rgb(165, 174, 221);
+    }
+    .img1{
+        width: 300px;
+        height: 300px;
+    }
+    .img2{
+        width: 300px;
+        height: 300px;
+    }
+    .img3{
+        width: 300px;
+        height: 300px;
+    }
+    .img4{
+        width: 300px;
+        width: 300px;
+    }

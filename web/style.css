@@ -1,0 +1,11 @@
+body{
+  background-color: lch(0% 0 0)
+}
+.first{
+  background-color: red;
+  color: yellow;
+}
+.second{
+background-color: blue;
+color: white;
+}

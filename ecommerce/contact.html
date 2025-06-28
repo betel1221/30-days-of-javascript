@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFusion - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+    <style>
+        .main-content {
+            padding: 3rem 2rem;
+            color: #1e293b;
+            position: relative;
+        }
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(107, 114, 128, 0.7), rgba(30, 41, 59, 0.7));
+            z-index: 0;
+        }
+        .contact-section {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            text-align: center;
+            color: #ffffff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .contact-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .contact-form {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #d1d5db;
+            background: rgba(255, 255, 255, 0.9);
+            transition: border-color 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #ef4444;
+        }
+        .contact-form button {
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .contact-form button:hover {
+            transform: scale(1.05);
+        }
+        #form-feedback {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #ef4444;
+        }
+        .map-section {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .map-section h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .map-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #f3f4f6, #ffffff);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e293b;
+            transition: transform 0.3s;
+        }
+        .map-placeholder:hover {
+            transform: scale(1.02);
+        }
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .social-links a {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        body.dark-mode .main-content::before {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 41, 59, 0.8));
+        }
+        body.dark-mode .contact-section {
+            color: #ffffff;
+        }
+        body.dark-mode .contact-form input,
+        body.dark-mode .contact-form textarea {
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+        }
+        body.dark-mode .map-section {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        body.dark-mode .map-section h2 {
+            color: #ffffff;
+        }
+        body.dark-mode .map-placeholder {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #ffffff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body style="background-image: url('./asset/cyber-monday-5463567_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin: 0; padding: 0; position: relative;" class="light-mode">
+    <div class="page-wrapper" style="position: relative; min-height: 100vh; display: flex; flex-direction: column;">
+        <header class="header">
+            <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(0, 0, 0, 0.2);">
+                <a href="index.html" class="site-title" style="color: #f59e0b; font-size: 1.5rem; font-weight: 700; text-decoration: none;">ShopFusion</a>
+                <div class="header-search" style="display: flex; align-items: center;">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input" style="padding: 0.5rem; border-radius: 0.375rem; border: 1px solid #d1d5db; background-color: rgba(255, 255, 255, 0.9);">
+                    <button id="search-button" class="search-button" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #ef4444; border: none; border-radius: 0.375rem; color: #ffffff;">
+                        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1rem; height: 1rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="header-nav" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="index.html" class="header-link" style="color: #ffffff; text-decoration: none;">Home</a>
+                    <a href="products.html" class="header-link" style="color: #ffffff; text-decoration: none;">Products</a>
+                    <a href="about.html" class="header-link" style="color: #ffffff; text-decoration: none;">About</a>
+                    <a href="contact.html" class="header-link active" style="color: #f59e0b; text-decoration: none;">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle-button" style="background: none; border: none; color: #ffffff;">
+                        <svg id="theme-icon" class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1.5rem; height: 1.5rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content container" style="flex: 1;">
+            <section class="contact-section">
+                <h1>Contact Us</h1>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="form-feedback"></div>
+            </section>
+
+            <section class="map-section">
+                <h2>Our Location</h2>
+                <div class="map-placeholder">Map Placeholder (Integrate Google Maps API)</div>
+                <div class="social-links">
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                    <a href="#">👍</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-content" style="padding: 1rem 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                <p style="margin: 0; color: #ffffff;">© 2025 ShopFusion. All rights reserved.</p>
+                <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#" class="footer-link" style="color: #f59e0b; text-decoration: none;" onclick="alert('Privacy Policy placeholder'); return false;">Privacy Policy</a>
+                    <a href="#" class="footer-link" style="color: #f59e0b; text-decoration: none;" onclick="alert('Terms of Service placeholder'); return false;">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            if (name && email && message) {
+                document.getElementById('form-feedback').textContent = 'Message sent successfully!';
+                this.reset();
+                setTimeout(() => document.getElementById('form-feedback').textContent = '', 3000);
+            } else {
+                document.getElementById('form-feedback').textContent = 'Please fill all fields!';
+            }
+        });
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('theme-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+            }
+        });
+    </script>
+</body>
+</html>

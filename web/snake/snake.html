@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eye-Catching Snake Game</title>
+  <link rel="stylesheet" href="snake.css" />
+</head>
+<body>
+  <div id="menu">
+    <h2>Select Level</h2>
+    <div id="levels"></div>
+    <button id="changeThemeBtn" title="Change Snake Theme 🎨">Change Theme 🎨</button>
+    <button id="startBtn" disabled>Start Game ▶️</button>
+  </div>
+
+  <div id="gameContainer" style="display:none">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="scoreBoard">
+      <p id="currentScore">Score: 0</p>
+      <p id="highScore">High Score: 0</p>
+    </div>
+    <div id="controls">
+      <button id="pauseBtn" title="Pause Game ⏸">Pause ⏸</button>
+      <button id="continueBtn" title="Continue Game ▶️">Continue ▶️</button>
+      <button id="tryAgainBtn" title="Try Again 🔄">Try Again 🔄</button>
+      <button id="backMenuBtn" title="Back to Menu ⬅️">Back to Menu ⬅️</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>

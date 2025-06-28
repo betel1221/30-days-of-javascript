@@ -1,0 +1,14 @@
+/* mobile.css */
+body {
+  background-color: #fff3e0; /* light orange background for mobile */
+  padding: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}

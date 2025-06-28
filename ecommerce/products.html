@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFusion - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+    <style>
+        .main-content {
+            padding: 3rem 2rem;
+            color: #1e293b;
+            position: relative;
+        }
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(107, 114, 128, 0.7), rgba(30, 41, 59, 0.7));
+            z-index: 0;
+        }
+        .hero-section {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #ffffff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .search-input {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #d1d5db;
+            background: rgba(255, 255, 255, 0.9);
+            width: 300px;
+            transition: border-color 0.3s;
+        }
+        .search-input:focus {
+            border-color: #ef4444;
+        }
+        .search-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            color: #ffffff;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .search-button:hover {
+            transform: scale(1.05);
+        }
+        .category-filter {
+            position: sticky;
+            top: 4rem;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            animation: slideDown 1s ease-out;
+        }
+        .category-filter a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s, background 0.3s;
+        }
+        .category-filter a:hover,
+        .category-filter a.active {
+            color: #ffffff;
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            border-radius: 0.375rem;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 2rem;
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s ease-in;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .product-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        .product-card p {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+        body.dark-mode .main-content::before {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 41, 59, 0.8));
+        }
+        body.dark-mode .hero-section {
+            color: #ffffff;
+        }
+        body.dark-mode .category-filter {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        body.dark-mode .category-filter a {
+            color: #ffffff;
+        }
+        body.dark-mode .product-card {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        body.dark-mode .product-card h3 {
+            color: #ffffff;
+        }
+        body.dark-mode .product-card p {
+            color: #a0aec0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body style="background-image: url('./asset/cyber-monday-5463567_1280.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin: 0; padding: 0; position: relative;" class="light-mode">
+    <div class="page-wrapper" style="position: relative; min-height: 100vh; display: flex; flex-direction: column;">
+        <header class="header">
+            <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(0, 0, 0, 0.2);">
+                <a href="index.html" class="site-title" style="color: #f59e0b; font-size: 1.5rem; font-weight: 700; text-decoration: none;">ShopFusion</a>
+                <div class="header-search" style="display: flex; align-items: center;">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input" style="padding: 0.5rem; border-radius: 0.375rem; border: 1px solid #d1d5db; background-color: rgba(255, 255, 255, 0.9);">
+                    <button id="search-button" class="search-button" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #ef4444; border: none; border-radius: 0.375rem; color: #ffffff;">
+                        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1rem; height: 1rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="header-nav" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="index.html" class="header-link" style="color: #ffffff; text-decoration: none;">Home</a>
+                    <a href="products.html" class="header-link active" style="color: #f59e0b; text-decoration: none;">Products</a>
+                    <a href="about.html" class="header-link" style="color: #ffffff; text-decoration: none;">About</a>
+                    <a href="contact.html" class="header-link" style="color: #ffffff; text-decoration: none;">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle-button" style="background: none; border: none; color: #ffffff;">
+                        <svg id="theme-icon" class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1.5rem; height: 1.5rem;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content container" style="flex: 1;">
+            <section class="hero-section">
+                <h1>Explore Our Products</h1>
+                <div class="search-bar">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search by name or category...">
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
+            </section>
+
+            <div class="category-filter">
+                <a href="?category=all" class="active">All</a>
+                <a href="?category=electronics">Electronics</a>
+                <a href="?category=furniture">Furniture</a>
+                <a href="?category=appliances">Appliances</a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Smart TV</h3>
+                    <p>4K Ultra HD, 55 inches</p>
+                </div>
+                <div class="product-card">
+                    <h3>Leather Sofa</h3>
+                    <p>3-seater, brown</p>
+                </div>
+                <div class="product-card">
+                    <h3>Washing Machine</h3>
+                    <p>10kg, front load</p>
+                </div>
+                <div class="product-card">
+                    <h3>Bluetooth Speaker</h3>
+                    <p>Waterproof, 20W</p>
+                </div>
+            </div>
+
+            <button id="back-to-top" class="back-to-top">↑</button>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-content" style="padding: 1rem 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                <p style="margin: 0; color: #ffffff;">© 2025 ShopFusion. All rights reserved.</p>
+                <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#" class="footer-link" style="color: #f59e0b; text-decoration: none;" onclick="alert('Privacy Policy placeholder'); return false;">Privacy Policy</a>
+                    <a href="#" class="footer-link" style="color: #f59e0b; text-decoration: none;" onclick="alert('Terms of Service placeholder'); return false;">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('theme-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

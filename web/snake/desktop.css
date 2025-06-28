@@ -1,0 +1,13 @@
+/* desktop.css */
+body {
+  background-color: #131c1d; /* light cyan background for desktop */
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 22px;
+  max-width: 800px;
+}

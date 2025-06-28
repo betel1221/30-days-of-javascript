@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../Downloads/calculator-main/calculator-main"
+		},
+		{
+			"path": "../../../Downloads/fancy_calculator"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "fancy_calculator"
+	}
+}
